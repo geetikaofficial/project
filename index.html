@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ATG world</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/whole.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+      <!-- menu bar -->
+   
+        <header class="py-3 mb-3 border-bottom">
+            <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+              <div class="dropdown">
+                  <img src="images/whole.png" alt="">
+              </div>
+              <div class="d-flex align-items-left">
+                <input type="search" class="d-none d-md-block " placeholder="Search for your Favorite groups in ATG">
+                  
+                  <!-- <button class="open-button" onclick="openForm()">Open Form</button> --><button class="btn btn-light open-Button d-none d-md-block" onclick="openForm()" style="margin-left: 41%;" > Create Account, <b class="text-primary">It's Free! </b></button>
+
+                  <div class="d-block d-md-none LoginIcon" onclick="openForm()" ><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                  </svg></div>
+                </div>
+                </div>
+
+
+                <!-- form -->
+     <div class="overlay">         
+  <div class="form-popup" id="myForm">
+    
+      <button id="closeButton" class="close" onclick="closeForm()">X</button>
+  <form  class="form-container" >
+    <p class="formText d-md-block d-none">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</p>
+   <p class="create">Create Account</p>
+   <div class="row">
+    <div class=" col-lg-6 col-sm-12 col-md-12">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input id="name" type="name" class="form-control p-2" name="name" placeholder="First Name">
+        <input id="name" type="name" class="form-control p-2" name="name" placeholder="Last Name">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="email" type="email" class="form-control p-2" name="email" placeholder="Email">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="password" type="password" class="form-control p-2" name="password" placeholder="Password">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input id="password" type="password" class="form-control p-2" name="password" placeholder="Confirm Password">
+      </div>
+      <button type="submit" class="btn d-md-block d-none ">Create Account</button>
+      <div class="facebook mt-4">
+        <button  class="btn facebook"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+        </svg> Sign Up with Facebook</button>
+      </div>
+      <div class="google mt-3">
+        <button  class="btn google"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+          <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+        </svg> &nbsp; Sign Up with Google</button>
+      </div>
+    </div>
+    <div class=" col-lg-1 col-md-12"></div>
+    <div class=" col-lg-5 col-md-12">
+      <p class="already ml-5 d-md-block d-none">&nbsp;&nbsp; Already have a account?  <button onclick="openSignInForm()" id="sign" class="text-primary sign" style="outline: none; color: white; background-color: white ; border: none;">Sign In</button></p>
+        <!-- <button id="sign" class="text-primary sign" onclick="sign()" style="outline: none; color: white; background-color: white ; border: none;"><b>Sign In</b></button></p>  -->
+     <img src="images/atg_illustration.png " alt="" style="width: 250px;" class="col-lg-4 d-none d-md-none d-lg-block col-12 ">
+     <div class="google mt-3 ">
+     <button class="btn create d-md-none d-block text-center" > &nbsp; Sign Up</button>
+    </div>
+    <div class="text-center">
+    <h6 class="mt-3 d-md-none">Have Account ? <button class="text-primary" onclick="openSignInForm()" id="sign" style="outline: none; color: white; background-color: white ; border: none;">Login</b></h6>
+  </div>
+     <p class="privacy">By signing up, you agree to our Terms & conditions, Privacy policy</p>
+    
+  </div>
+  </form>
+         
+    <div class="form-popup-second" id="secondForm" >
+      
+        <button id="closeButton" class="close" onclick="closeFormButton()">X</button>
+    <form  class="form-container">
+      <p class="formText">Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</p>
+     <p class="create mt-4">Sign In</p>
+     <!-- <span class="already ml-5">&nbsp;&nbsp; Already have a account? <b class="text-primary">Sign In</b></span> -->
+     <div class="row">
+      <div class="col-4 col-lg-6">
+       
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="email" type="email" class="form-control p-2" name="email" placeholder="Email">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input id="password" type="password" class="form-control p-2" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn mt-3 ">Sign In</button>
+        <div class="facebook mt-4">
+          <button  class="btn facebook"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg> Sign Up with Facebook</button>
+        </div>
+        <div class="google mt-3">
+          <button  class="btn google"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+            <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+          </svg> &nbsp; Sign Up with Google</button>
+        </div>
+        <div class="forget mt-3">
+        <button  class="btn google">&nbsp; Forget Password? </button>
+      </div>
+      </div>
+      <div class="col-4 col-lg-1 "></div>
+      <div class="col-4 col-lg-5 ">
+        <p class="already ml-5">&nbsp;&nbsp; Already have a account? <b class="text-primary">Create Account!</b></p> 
+       <img src="images/atg_illustration.png" alt="" style="width: 300px;">
+       <p class="privacy">By signing up, you agree to our Terms & conditions, Privacy policy</p>
+      </div>
+    </form>
+
+</div>
+</div>
+     </div>
+                <!-- <div id="overlay" class="overlay">
+                        <div id="popup" class="popup">
+                          
+                          <h2>Login</h2>
+                          <form id="submit" name="form">
+                             Add your login form fields here (e.g., username, password) 
+                              <label for="username">Username:</label>
+                              <input type="text" id="username" name="username"><br><br>
+                              <label for="password">Password:</label>
+                              <input type="password" id="password" name="password"><br><br> 
+                              <button id="loginButton">Login</button>
+
+                              <button onclick="close()" class="close">close</button>
+                          </form>
+                      </div>
+                    </div> -->
+                <!-- <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <div class="text-on-desktop d-none d-md-block " ><div class="dropdown">
+                          <button class="btn btn-light dropdown-toggle"  id="buttonLogin" onclick="open()"    data-bs-toggle="dropdown" aria-expanded="false">
+                          Create Account, <b class="text-primary">It's Free! </b>
+                          </button>
+                        
+                        </div>
+                      </div>
+                        <div id="overlay" class="overlay"></div>
+                        <div id="popup" class="popup">
+                          
+                          <h2>Login</h2>
+                          <form id="submit" name="form">
+                             Add your login form fields here (e.g., username, password) 
+                              <label for="username">Username:</label>
+                              <input type="text" id="username" name="username"><br><br>
+                              <label for="password">Password:</label>
+                              <input type="password" id="password" name="password"><br><br> 
+                              <button id="loginButton">Login</button>
+
+                              <button onclick="close()" class="close">close</button>
+                          </form>
+                      </div>
+                        <div class="icon-on-mobile d-md-none account"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                          </svg>
+                    
+                  <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item signupForm" href="#">Sign up</a></li>
+                    <li><a class="dropdown-item LoginForm" href="#" >Login</a></li>
+                   
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+          </header>
+
+         <div class="container-fluid">
+             <div class="row">
+                 <div class="col-md-12 col-12">
+                    <div class="image-background position-relative">
+                      <img src="images/firstImage.png" alt="Image" class="w-100 d-md-block d-none">
+                      <b class="text-overlay color-dark">Join Group</b>
+                      <img src="images/mobileviewFirstimage.png" alt="Image" class="w-100 d-block d-md-none">
+                      
+                      <div class="text-overlay position-absolute bottom-0 start-0">
+                            <h1>Computer Engineering</h1>
+                            <h6>142,765 Computer Engineers follow this</h6>
+                          </div>
+                        </div>
+                    </div>
+                 </div>
+             </div>
+         </div>
+         <div class="container mt-5">
+          <div class="d-flex justify-content-between">
+            <h6 class="d-md-block d-none"><b>All Posts (32)</b></h6>
+            <h6 class="d-md-none d-block"><b>Posts(368)</b></h6>
+            <p class="d-md-block d-none">Article</p>
+            <p class="d-md-block d-none">Event</p>
+            <p class="d-md-block d-none">Education</p>
+            <p class="d-md-block d-none">Job</p>
+            <p class="d-none d-md-block"></p>
+            <p class="d-none d-md-block"></p>
+            <p class="d-none d-md-block"></p>
+            <p class="d-none d-md-block"></p>
+            
+            <button class="btn btn-light d-none d-md-block" id="write">Write a Post <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-bar-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+            </svg></button>
+            
+            <button class="btn btn-primary d-none d-md-block" id="join"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+              <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+            </svg> Join Group</button>
+            <button class="btn btn-light d-md-none " style="margin-left:230px;"><b>Filter : All <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-sort-alpha-down-alt" viewBox="0 0 16 16">
+              <path d="M12.96 7H9.028v-.691l2.579-3.72v-.054H9.098v-.867h3.785v.691l-2.567 3.72v.054h2.645V7z"/>
+              <path fill-rule="evenodd" d="M10.082 12.629 9.664 14H8.598l1.789-5.332h1.234L13.402 14h-1.12l-.419-1.371h-1.781zm1.57-.785L11 9.688h-.047l-.652 2.156h1.351z"/>
+              <path d="M4.5 2.5a.5.5 0 0 0-1 0v9.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L4.5 12.293V2.5z"/>
+            </svg></b></button>
+            <hr>
+          </div>
+          <hr>
+            
+              <div class="row">
+                <div class="col-12 col-md-7">
+                  <div class="card">
+              <img src="images/post1.png" class="card-img-top" alt="...">
+              <b class="m-3"><i>✍️ Article</i></b>
+              <div class="card-body">
+                <div class="d-flex bd-highlight mb-3">
+                  <div class="me-auto bd-highlight"><h5><b>What if famous brands had regular fonts? Meet RegulaBrands!</b></h5></div>
+                  
+                  <div class="bd-highlight"><button class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-three-dots " viewBox="0 0 16 16">
+                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                  </svg></button></div>
+                </div>
+                <p class="card-text">
+                  I’ve worked in UX for the better part of a decade. From now on, I plan to rei…
+                </p>
+              </div>
+              <div class="d-flex bd-highlight mb-3">
+                <div class="me-auto p-2 px-3 bd-highlight"><img src="images/p1.png" alt=""> <b style="font-size: 18px;">Sarthak Kamra</b></div><br>
+                <div class="pl-4 pt-3 bd-highlight ">1.4K views</div>
+             
+                <div class="px-3 pt-2 bd-highlight"><button class="btn btn-light d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                  <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                </svg> </button>
+              <button class="btn btn-light k d-block d-md-none">Share <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                  <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                </svg> </button>
+              </div>
+              </div>
+            </div>
+          </div>
+      
+
+              <div class="col-md-4  d-md-block d-none" style="margin-left: 80px;">
+                <input type="search" name="" id="" class="w-100" placeholder="Enter your location">
+            <p class="mt-3 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+            </svg> Your location will help us serve better and extend a personalised experience.</p>
+            <div class="container mt-5">
+              <h5><svg xmlns="http://www.w3.org/2000/svg" width="18" height="26" fill="currentColor" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
+                <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
+              </svg> RECOMMENDED GROUPS</h5>
+            </div>
+              <div class="follow">
+
+  <table class="ml-3">
+    <tr>
+      <td><img src="images/r1.png" alt=""></td>
+      <td>Leisure</td>
+      <td></td>
+    <td colspan="2"><button class="btn btn-light">follow</button></td>
+     
+    </tr>
+    <tr>
+      <td><img src="images/r2.png" alt=""></td>
+      <td>Activism</td>
+      <td></td>
+    <td colspan="2"><button class="btn btn-light">follow</button></td>
+      
+    </tr>
+    <tr>
+      <td><img src="images/r3.png" alt=""></td>
+      <td>Philosophy</td>
+      <td></td>
+    <td colspan="2"><button class="btn btn-light">follow</button></td>
+      
+    </tr>
+    <tr>
+    <td><img src="images/r4.png" alt=""></td>
+    <td>MBA</td>
+    <td></td>
+    <td colspan="2"><button class="btn btn-light">follow</button></td>
+  </tr>
+  </table>
+
+
+
+  <p class="mt-5 text-end text-primary ">See More <span class="spinner-border" role="status"></span></p>
+      
+              
+            
+          </div>
+          </div>
+          <!-- 2nd card -->
+          <div class="row">
+            <div class="col-12 col-md-7  mt-3">
+              <div class="card">
+          <img src="images/Education.png" class="card-img-top" alt="...">
+          <b class="m-3"><i>🔬️ Education</i></b>
+          <div class="card-body">
+            <div class="d-flex bd-highlight mb-3">
+              <div class="me-auto bd-highlight"><h5><b>Tax Benefits for Investment under National Pension Scheme launched by Government</b></h5></div>
+              
+              <div class="bd-highlight"><button class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-three-dots " viewBox="0 0 16 16">
+                <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+              </svg></button></div>
+            </div>
+            <p class="card-text">
+              I’ve worked in UX for the better part of a decade. From now on, I plan to rei…
+            </p>
+          </div>
+          <div class="d-flex bd-highlight mb-3">
+            <div class="me-auto p-2 px-3 bd-highlight"><img src="images/p2.png" alt=""> <b style="font-size: 18px;">Sarah West</b></div>
+            <div class="p-2 pt-3 bd-highlight">1.4K views</div>
+            <div class="px-3 pt-2 bd-highlight d-none"><button class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+              <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+            </svg></button></div>
+            <div class="px-3 pt-2 bd-highlight"><button class="btn btn-light d-md-block">Share <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+              <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+            </svg> </button></div>
+          </div>
+
+
+        </div>
+      </div>
+
+</div>
+<div class="row">
+  <div class="col-12 col-md-7  mt-3">
+    <div class="card">
+<img src="images/Meetup.png" class="card-img-top" alt="...">
+<b class="m-3"><i>🗓️ Meetup</i></b>
+<div class="card-body">
+  <div class="d-flex bd-highlight mb-3">
+    <div class="me-auto bd-highlight"><h5><b>Finance & Investment Elite Social Mixer @Lujiazui</b></h5></div>
+    
+    <div class="bd-highlight"><button class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-three-dots " viewBox="0 0 16 16">
+      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+    </svg></button></div>
+  </div>
+  <p class="card-text">
+    <div class="d-flex bd-highlight mb-3">
+      <div class="me-auto bd-highlight"><p><svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+        <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+      </svg>Fri, 12 Oct, 2023</p></div>
+      <div class="me-auto bd-highlight"><p><svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+      </svg>Ahmedabad , India </p></div>
+      
+  </p>
+  
+</div>
+    <div class="box1 text-center justify-content-end"><p style="color: red; " class="p-1">Visit Website</p></div>
+</div>
+<div class="d-flex bd-highlight mb-3">
+  <div class="me-auto p-2 px-3 bd-highlight"><img src="images/p3.png" alt=""> <b style="font-size: 18px;">Ronal Jones</b></div>
+  <div class="p-2 pt-3 bd-highlight">1.4K views</div>
+  <div class="px-3 pt-2 bd-highlight"><button class="btn btn-light  d-md-block d-none"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+  </svg></button>
+  <button class="btn btn-light k d-block d-md-none">Share <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+  </svg> </button>
+</div>
+</div>
+
+
+</div>
+</div>
+
+</div>
+<div class="row">
+  <div class="col-12 col-md-7  mt-3">
+    <div class="card">
+
+<b class="m-3"><i>💼️ Job</i></b>
+<div class="card-body">
+ 
+  <div class="d-flex bd-highlight mb-3">
+    <div class="me-auto bd-highlight"><h5><b>Software Developer</b> </h5></div>
+    
+    <div class="bd-highlight"><button class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-three-dots " viewBox="0 0 16 16">
+      <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+    </svg></button></div>
+  </div>
+  <p class="card-text">
+    <div class="d-flex bd-highlight mb-3">
+      <div class="me-auto bd-highlight"><p><svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+      </svg>Innovaccer Analytics Private Ltd. </p></div>
+      <div class="me-auto bd-highlight"><p><svg xmlns="http://www.w3.org/2000/svg" width="26" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+      </svg>Noida , India </p></div>
+      
+  </p>
+  
+</div>
+<div class="box1 text-center justify-content-end"><p style="color: green; " class="p-1">Apply on Timeline</p></div><br>
+<div class="d-flex bd-highlight mb-3">
+  <div class="me-auto p-2 px-3 bd-highlight"><img src="images/p4.png" alt=""> <b style="font-size: 18px;">Joseph Gray</b></div>
+  <div class="p-2  pt-3 bd-highlight">1.4K views</div>
+  <div class=" bd-highlight"><button class="btn btn-light d-none d-md-block"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+  </svg></button>
+  <div class="pt-2 bd-highlight"></div><button class="btn btn-light d-md-none d-block">Share <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+  </svg></button>
+  
+</div>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- write an article -->
+<div class="container">  
+  <div class="circle d-md-none "><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-pencil-fill mt-2" viewBox="0 0 16 16">
+    <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+  </svg></div>
+
+</div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
